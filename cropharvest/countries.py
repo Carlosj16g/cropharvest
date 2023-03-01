@@ -15,7 +15,7 @@ def load_country_shapefile():
 def get_country_bbox(country_name: str, largest_only: bool = False) -> List[BBox]:
 
     country_shapefile = load_country_shapefile()
-    country = country_shapefile[country_shapefile.NAME_EN == country_name]
+    country = country_shapefile[country_shapefile.NAME_EN == ECUADOR]
     if len(country) != 1:
         raise RuntimeError(f"Unrecognized country {country_name}")
     polygon = country.geometry.iloc[0]
